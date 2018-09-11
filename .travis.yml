@@ -20,7 +20,7 @@ jobs:
         - git tag -f $RELEASE_TAG
       deploy:
         provider: releases
-        api_key: e8ee9c50ad4bf8848a2b72ebb84c1e0035e042b3
+        api_key: $GITHUB_OAUTH_TOKEN
         file: "build/libs/pal-tracker.jar"
         skip_cleanup: true
     - stage: deploy to review
@@ -32,8 +32,8 @@ jobs:
         - echo "Deploying $RELEASE_TAG to review"
       deploy:
         provider: cloudfoundry
-        api: pal-tracker-pietro-ryang1.apps.chicken.pal.pivotal.io
-        username: ryang1@ebay.com
-        password: kwdpjjhd
-        organization: rick-yang
+        api: $CF_API_URL
+        username: $CF_USERNAME
+        password: $CF_PASSWORD
+        organization: $CF_ORG
         space: review
