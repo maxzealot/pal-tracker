@@ -1,6 +1,6 @@
-package io.pivotal.pal.tracker;
+package io.pivotal.pal.tracker.repository;
 
-import org.springframework.stereotype.Component;
+import io.pivotal.pal.tracker.entity.TimeEntry;
 
 import java.util.List;
 

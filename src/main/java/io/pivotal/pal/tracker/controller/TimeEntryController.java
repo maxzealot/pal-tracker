@@ -1,6 +1,7 @@
-package io.pivotal.pal.tracker;
+package io.pivotal.pal.tracker.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import io.pivotal.pal.tracker.entity.TimeEntry;
+import io.pivotal.pal.tracker.repository.TimeEntryRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,10 +10,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class TimeEntryController {
 
-    @Autowired
     private TimeEntryRepository timeEntryRepository;
 
-    public TimeEntryController(TimeEntryRepository timeEntryRepository) {
+    public TimeEntryController(@Qualifier("jdbcTimeEntryRepository") TimeEntryRepository timeEntryRepository) {
         this.timeEntryRepository = timeEntryRepository;
     }
 

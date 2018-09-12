@@ -1,5 +1,6 @@
-package io.pivotal.pal.tracker;
+package io.pivotal.pal.tracker.repository;
 
+import io.pivotal.pal.tracker.entity.TimeEntry;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
+@Component("inMemTimeEntryRepository")
 public class InMemoryTimeEntryRepository implements TimeEntryRepository {
 
 

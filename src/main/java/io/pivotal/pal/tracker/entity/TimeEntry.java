@@ -1,4 +1,4 @@
-package io.pivotal.pal.tracker;
+package io.pivotal.pal.tracker.entity;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -98,3 +98,4 @@ public class TimeEntry {
                 '}';
     }
 }
+
